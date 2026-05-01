@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ERTÜRK MAYA ARICILIK | Yığılca Ana Arısı Ve Doğal Arı Ürünleri</title>
+<meta name="description" content="Düzce Yığılca’da sabit arıcılık yöntemiyle üretilen doğal kestane balı, orman gülü balı ve Yığılca ana arısı satışı. Doğrudan üreticisinden güvenilir arı ürünleri." />
+<meta name="keywords" content="Yığılca ana arısı, Yığılca arısı, kestane balı Yığılca, orman gülü balı, ana arı satışı, Düzce ana arı, yerli ana arı, ERTÜRK MAYA ARICILIK" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <div class="logo-box">
+      <a class="logo" href="index.html">ERTÜRK MAYA <span>ARICILIK</span></a>
+      <div class="logo-slogan">Mucize Arı Yığılca Arısı</div>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Anasayfa</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="urunler.html">Ürünler</a></li>
+        <li><a href="siparis.html">Sipariş Ver</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="page-main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Sipariş Ver</span>
+      <h1>WhatsApp Sipariş Formu</h1>
+      <p>Formu doldurun, sipariş bilgileriniz otomatik olarak WhatsApp mesajı şeklinde hazırlansın.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container form-wrap">
+      <div class="notice">
+        Sipariş formunu doldurduktan sonra <strong>“WhatsApp ile Siparişi Gönder”</strong> butonuna basın. Hazır mesaj doğrudan 0537 252 63 87 numarasına gönderilecektir.
+      </div>
+
+      <form class="order-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="adsoyad">Ad Soyad</label>
+            <input id="adsoyad" type="text" placeholder="Adınız ve soyadınız" required />
+          </div>
+          <div class="form-group">
+            <label for="telefon">Telefon</label>
+            <input id="telefon" type="tel" placeholder="05XX XXX XX XX" required />
+          </div>
+
+          <div class="form-group full">
+            <label for="urun">Ürün Seçimi</label>
+            <select id="urun" required>
+              <option value="">Ürün seçiniz</option>
+              <option>Kestane Balı</option>
+              <option>Orman Gülü Balı</option>
+              <option>Yığılca Ana Arısı</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="miktar">Miktar</label>
+            <input id="miktar" type="number" min="1" placeholder="Adet / kavanoz" required />
+          </div>
+
+          <div class="form-group">
+            <label for="teslimat">Gönderim Şekli</label>
+            <select id="teslimat">
+              <option>EFT / Havale sonrası gönderim</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="adres">Adres</label>
+            <textarea id="adres" rows="4" placeholder="Teslimat adresinizi yazınız"></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label for="not">Ek Not</label>
+            <textarea id="not" rows="4" placeholder="Eklemek istediğiniz not"></textarea>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button type="button" class="btn btn-whatsapp" onclick="sendOrderToWhatsApp()">WhatsApp ile Siparişi Gönder</button>
+          <a class="btn btn-outline" href="https://wa.me/905372526387?text=Merhaba,%20ERT%C3%9CRK%20MAYA%20ARICILIK%20bilgi%20almak%20istiyorum." target="_blank">Doğrudan WhatsApp Aç</a>
+        </div>
+        <p class="form-note">Not: Siparişler, EFT / havale işlemi tamamlandıktan sonra gönderime hazırlanır.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<script>
+function sendOrderToWhatsApp() {
+  const adsoyad = document.getElementById('adsoyad').value.trim();
+  const telefon = document.getElementById('telefon').value.trim();
+  const urun = document.getElementById('urun').value.trim();
+  const miktar = document.getElementById('miktar').value.trim();
+  const teslimat = document.getElementById('teslimat').value.trim();
+  const adres = document.getElementById('adres').value.trim();
+  const not = document.getElementById('not').value.trim();
+
+  if (!adsoyad || !telefon || !urun || !miktar) {
+    alert('Lütfen Ad Soyad, Telefon, Ürün ve Miktar alanlarını doldurun.');
+    return;
+  }
+
+  const message =
+`Merhaba, ERTÜRK MAYA ARICILIK için sipariş oluşturmak istiyorum.
+
+Ad Soyad: ${adsoyad}
+Telefon: ${telefon}
+Ürün: ${urun}
+Miktar: ${miktar}
+Gönderim Şekli: ${teslimat}
+Adres: ${adres || '-'}
+Ek Not: ${not || '-'}`;
+
+  const url = "https://wa.me/905372526387?text=" + encodeURIComponent(message);
+  window.open(url, '_blank');
+}
+</script>
+
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>ERTÜRK MAYA ARICILIK</h3>
+      <p>Düzce Yığılca’da sabit arıcılık yöntemiyle doğal arı ürünleri ve Yığılca ana arısı üretimi yapıyoruz.</p>
+    </div>
+    <div>
+      <h4>Hızlı Menü</h4>
+      <ul>
+        <li><a href="index.html">Anasayfa</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="urunler.html">Ürünler</a></li>
+        <li><a href="siparis.html">Sipariş Ver</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>İletişim</h4>
+      <p><strong>Mert Ertürk</strong><br>📞 0537 252 63 87</p>
+      <p><strong>Asutay Ertürk</strong><br>📞 0530 268 09 02</p>
+      <p><strong>Adres:</strong><br>Düzce Yığılca</p>
+    </div>
+  </div>
+  <div class="copyright">© 2026 ERTÜRK MAYA ARICILIK. Tüm hakları saklıdır.</div>
+</footer>
+<a class="whatsapp-float" href="https://wa.me/905372526387?text=Merhaba,%20ERT%C3%9CRK%20MAYA%20ARICILIK%20bilgi%20almak%20istiyorum." target="_blank">WhatsApp’tan Bilgi Al</a>
+
+</body>
+</html>
