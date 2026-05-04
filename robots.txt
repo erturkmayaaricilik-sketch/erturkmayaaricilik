@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://erturkmayaaricilik.com.tr/sitemap.xml
